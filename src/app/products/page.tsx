@@ -20,13 +20,7 @@ export default async function ProductsPage() {
     <Link href={`/product/${product.id}`} className="group flex flex-col">
       <div className="relative aspect-3/4 w-full bg-[#f2f2f0] overflow-hidden">
 
-        {/* Badge */}
-        <div className="absolute bottom-4 left-4 z-10 sm:top-4 sm:bottom-auto">
-          <span className="text-[8px] font-black uppercase tracking-[0.3em] bg-black text-white px-2 py-1 italic">
-            REALMN / 26
-          </span>
-        </div>
-
+    
         <Image
           src={product.image_url}
           alt={product.name}
