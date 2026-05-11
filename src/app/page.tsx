@@ -30,7 +30,7 @@ export default async function HomePage() {
         <div className="absolute inset-0 bg-black/45" />
 
         {/* Bottom fade to white */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-white to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-linear-to-t from-white to-transparent" />
 
         {/* Center content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
@@ -81,7 +81,7 @@ export default async function HomePage() {
               className="group flex flex-col"
             >
               {/* Image Frame */}
-              <div className="relative aspect-[3/4] w-full bg-[#f2f2f0] overflow-hidden">
+              <div className="relative aspect-3/4 w-full bg-[#f2f2f0] overflow-hidden">
 
                 {/* Product Image */}
                 <Image
@@ -94,7 +94,7 @@ export default async function HomePage() {
                 />
 
                 {/* Hover overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
 
                 {/* BUY NOW pill — desktop hover */}
                 <div className="absolute bottom-5 left-0 right-0 hidden sm:flex justify-center opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-300">
