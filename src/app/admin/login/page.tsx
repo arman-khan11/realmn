@@ -13,7 +13,6 @@ export default function AdminLogin() {
     e.preventDefault();
     setStatus('AUTHENTICATING...');
 
-    // ✅ Supabase Auth use kar rahe hain ab
     const { error } = await superbase.auth.signInWithPassword({
       email,
       password,
@@ -23,6 +22,8 @@ export default function AdminLogin() {
       setStatus('ERROR: ACCESS_DENIED');
     } else {
       setStatus('ACCESS_GRANTED');
+      // ✅ localStorage bhi set karo — admin page check karta hai
+      localStorage.setItem('realmn_auth_key', 'authenticated_user_777');
       router.push('/admin');
     }
   };
@@ -44,9 +45,10 @@ export default function AdminLogin() {
         <form onSubmit={handleLogin} className="space-y-8">
           <div className="border-b-2 border-black focus-within:bg-zinc-50 transition-all duration-300">
             <label className="text-[7px] font-black uppercase tracking-[0.4em] text-zinc-400 px-2 pt-1 block">Identity_Protocol</label>
-            <input 
-              type="email" 
-              className="w-full bg-transparent px-2 py-2 outline-none text-sm font-bold tracking-widest uppercase placeholder:text-zinc-200"
+            <input
+              type="email"
+              // ✅ uppercase hata diya
+              className="w-full bg-transparent px-2 py-2 outline-none text-sm font-bold tracking-widest placeholder:text-zinc-200"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="EMAIL_ADDRESS"
@@ -56,9 +58,10 @@ export default function AdminLogin() {
 
           <div className="border-b-2 border-black focus-within:bg-zinc-50 transition-all duration-300">
             <label className="text-[7px] font-black uppercase tracking-[0.4em] text-zinc-400 px-2 pt-1 block">Access_Key</label>
-            <input 
-              type="password" 
-              className="w-full bg-transparent px-2 py-2 outline-none text-sm font-bold tracking-widest uppercase placeholder:text-zinc-200"
+            <input
+              type="password"
+              // ✅ uppercase hata diya
+              className="w-full bg-transparent px-2 py-2 outline-none text-sm font-bold tracking-widest placeholder:text-zinc-200"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••"
