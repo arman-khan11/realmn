@@ -8,4 +8,5 @@ export interface Product {
   category: string;
   created_at: string;
   quantity: number;
+  section: string; 
 }

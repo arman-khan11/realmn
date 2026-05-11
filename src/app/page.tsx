@@ -5,11 +5,11 @@ import { Product } from '@/types/product';
 import Footer from './component/footer';
 
 export default async function HomePage() {
-  const { data: products } = await superbase
-    .from('products')
-    .select('*')
-    .order('created_at', { ascending: false });
-
+ const { data: products } = await superbase
+  .from('products')
+  .select('*')
+  .eq('section', 'Homepage')
+  .order('created_at', { ascending: false });
   return (
     <div className="bg-white min-h-screen text-black font-sans">
 
@@ -35,8 +35,8 @@ export default async function HomePage() {
               {/* Image Frame */}
               <div className="relative aspect-3/4 w-full bg-[#f2f2f0] overflow-hidden">
 
-                {/* Branding Badge */}
-                <div className="absolute top-4 left-4 z-10">
+                {/* ✅ Badge — bottom pe move kiya mobile ke liye */}
+                <div className="absolute bottom-4 left-4 z-10 sm:top-4 sm:bottom-auto">
                   <span className="text-[8px] font-black uppercase tracking-[0.3em] bg-black text-white px-2 py-1 italic">
                     REALMN / 26
                   </span>
@@ -55,7 +55,7 @@ export default async function HomePage() {
                 {/* Hover overlay gradient */}
                 <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-400" />
 
-                {/* BUY NOW pill — appears on hover (desktop) */}
+                {/* BUY NOW pill — desktop hover */}
                 <div className="absolute bottom-5 left-0 right-0 hidden sm:flex justify-center opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-300">
                   <span className="bg-white text-black text-[9px] font-black uppercase tracking-[0.4em] italic px-8 py-3 rounded-full shadow-xl">
                     BUY NOW →
@@ -86,13 +86,6 @@ export default async function HomePage() {
           ))}
         </div>
       </main>
-
-      {/* STICKY BRAND LOGO */}
-      <div className="fixed bottom-8 left-8 z-50">
-        <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xs font-mono italic border border-black shadow-2xl">
-          N
-        </div>
-      </div>
 
       <Footer />
     </div>

@@ -162,7 +162,7 @@ export default function Footer() {
           <p className="text-[8px] font-black uppercase tracking-[0.4em] text-zinc-500">NAVIGATE</p>
           {[
             { label: 'Home', href: '/' },
-            { label: 'Products', href: '/' },
+            { label: 'Products', href: '/products' },
             { label: 'About Us', href: '/about' },
           ].map((link) => (
             <Link
