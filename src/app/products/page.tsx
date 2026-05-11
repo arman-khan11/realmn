@@ -2,7 +2,7 @@ import { superbase } from '@/lib/superbase';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Product } from '@/types/product';
-
+export const revalidate = 0;
 export default async function ProductsPage() {
   const { data: topwear } = await superbase
     .from('products')
