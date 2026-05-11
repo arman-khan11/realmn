@@ -35,12 +35,7 @@ export default async function HomePage() {
               {/* Image Frame */}
               <div className="relative aspect-3/4 w-full bg-[#f2f2f0] overflow-hidden">
 
-                {/* ✅ Badge — bottom pe move kiya mobile ke liye */}
-                <div className="absolute bottom-4 left-4 z-10 sm:top-4 sm:bottom-auto">
-                  <span className="text-[8px] font-black uppercase tracking-[0.3em] bg-black text-white px-2 py-1 italic">
-                    REALMN / 26
-                  </span>
-                </div>
+               
 
                 {/* Product Image */}
                 <Image
