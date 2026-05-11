@@ -49,16 +49,16 @@ const faqs = [
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-zinc-800">
+    <div className="border-b border-zinc-100">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex justify-between items-center py-4 text-left gap-4"
       >
-        <span className="text-[11px] font-black uppercase tracking-widest text-zinc-200">{q}</span>
+        <span className="text-[11px] font-black uppercase tracking-widest text-zinc-800">{q}</span>
         <span className={`text-zinc-400 text-lg shrink-0 transition-transform duration-300 ${open ? 'rotate-45' : ''}`}>+</span>
       </button>
       {open && (
-        <p className="text-[11px] text-zinc-400 leading-relaxed pb-4 pr-8 italic">
+        <p className="text-[11px] text-zinc-500 leading-relaxed pb-4 pr-8 italic">
           {a}
         </p>
       )}
@@ -79,10 +79,10 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-black text-white font-sans">
+    <footer className="bg-white text-black font-sans border-t border-zinc-100">
 
       {/* Trust Signals */}
-      <div className="border-b border-zinc-900 px-6 md:px-16 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div className="border-b border-zinc-100 px-6 md:px-16 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
         {[
           { title: 'Cash On Delivery', sub: 'Available Across India' },
           { title: '7-Day Returns', sub: 'Hassle Free Policy' },
@@ -90,8 +90,8 @@ export default function Footer() {
           { title: 'Support 24hrs', sub: 'WhatsApp Response' },
         ].map((item) => (
           <div key={item.title} className="flex flex-col items-center gap-1">
-            <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white">{item.title}</span>
-            <span className="text-[8px] text-zinc-500 uppercase tracking-widest">{item.sub}</span>
+            <span className="text-[9px] font-black uppercase tracking-[0.3em] text-black">{item.title}</span>
+            <span className="text-[8px] text-zinc-400 uppercase tracking-widest">{item.sub}</span>
           </div>
         ))}
       </div>
@@ -102,22 +102,22 @@ export default function Footer() {
         {/* Brand */}
         <div className="lg:col-span-4 space-y-6">
           <div>
-            <h2 className="text-5xl font-black italic uppercase tracking-tighter leading-none">REALMN</h2>
-            <p className="text-[9px] font-black uppercase tracking-[0.4em] text-zinc-500 mt-2">
-              WEAR THE CONFIDENT.
+            <h2 className="text-5xl font-black italic uppercase tracking-tighter leading-none text-black">REALMN</h2>
+            <p className="text-[9px] font-black uppercase tracking-[0.4em] text-zinc-400 mt-2">
+              WEAR CONFIDENT.
             </p>
           </div>
-          <p className="text-[12px] text-zinc-500 leading-relaxed max-w-xs">
+          <p className="text-[12px] text-zinc-400 leading-relaxed max-w-xs">
             Premium outfit combos crafted for confidence, style, and modern fashion. Built for real men who wear their identity.
           </p>
 
           {/* Newsletter */}
           <div>
-            <p className="text-[8px] font-black uppercase tracking-[0.4em] text-zinc-500 mb-3">
+            <p className="text-[8px] font-black uppercase tracking-[0.4em] text-zinc-400 mb-3">
               STAY IN THE LOOP
             </p>
             {subscribed ? (
-              <p className="text-[10px] font-black uppercase tracking-widest text-green-400">
+              <p className="text-[10px] font-black uppercase tracking-widest text-black">
                 YOU&apos;RE IN. 🖤
               </p>
             ) : (
@@ -127,12 +127,12 @@ export default function Footer() {
                   placeholder="YOUR EMAIL"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="bg-zinc-900 border border-zinc-800 text-white text-[10px] font-black uppercase tracking-widest px-4 py-3 outline-none grow placeholder:text-zinc-700 focus:border-zinc-600 transition-all"
+                  className="bg-zinc-50 border border-zinc-200 text-black text-[10px] font-black uppercase tracking-widest px-4 py-3 outline-none grow placeholder:text-zinc-300 focus:border-black transition-all"
                   required
                 />
                 <button
                   type="submit"
-                  className="bg-white text-black text-[9px] font-black uppercase tracking-widest px-5 py-3 hover:bg-zinc-200 transition-all"
+                  className="bg-black text-white text-[9px] font-black uppercase tracking-widest px-5 py-3 hover:bg-zinc-800 transition-all"
                 >
                   JOIN
                 </button>
@@ -142,12 +142,12 @@ export default function Footer() {
 
           {/* Instagram */}
           <div>
-            <p className="text-[8px] font-black uppercase tracking-[0.4em] text-zinc-500 mb-3">FOLLOW US</p>
+            <p className="text-[8px] font-black uppercase tracking-[0.4em] text-zinc-400 mb-3">FOLLOW US</p>
             <a
               href="https://instagram.com/realmn.in"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-zinc-300 hover:text-white transition-all border border-zinc-800 hover:border-zinc-600 px-4 py-2"
+              className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-zinc-600 hover:text-black transition-all border border-zinc-200 hover:border-black px-4 py-2"
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
@@ -159,7 +159,7 @@ export default function Footer() {
 
         {/* Links */}
         <div className="lg:col-span-2 space-y-4">
-          <p className="text-[8px] font-black uppercase tracking-[0.4em] text-zinc-500">NAVIGATE</p>
+          <p className="text-[8px] font-black uppercase tracking-[0.4em] text-zinc-400">NAVIGATE</p>
           {[
             { label: 'Home', href: '/' },
             { label: 'Products', href: '/products' },
@@ -168,7 +168,7 @@ export default function Footer() {
             <Link
               key={link.label}
               href={link.href}
-              className="block text-[11px] font-black uppercase tracking-widest text-zinc-400 hover:text-white transition-all"
+              className="block text-[11px] font-black uppercase tracking-widest text-zinc-500 hover:text-black transition-all"
             >
               {link.label}
             </Link>
@@ -177,11 +177,11 @@ export default function Footer() {
 
         {/* Support */}
         <div className="lg:col-span-2 space-y-4">
-          <p className="text-[8px] font-black uppercase tracking-[0.4em] text-zinc-500">SUPPORT</p>
+          <p className="text-[8px] font-black uppercase tracking-[0.4em] text-zinc-400">SUPPORT</p>
           {[
             { label: 'WhatsApp Us', href: 'https://wa.me/919084938127' },
-            { label: 'instagram', href: 'https://www.instagram.com/realmn.in/' },
-            { label: 'tweeter', href: 'https://twitter.com/realmn_in' },
+            { label: 'Instagram', href: 'https://www.instagram.com/realmn.in/' },
+            { label: 'Twitter', href: 'https://twitter.com/realmn_in' },
             { label: 'FAQ', href: '#faq' },
           ].map((link) => (
             <a
@@ -189,7 +189,7 @@ export default function Footer() {
               href={link.href}
               target={link.href.startsWith('http') ? '_blank' : undefined}
               rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
-              className="block text-[11px] font-black uppercase tracking-widest text-zinc-400 hover:text-white transition-all"
+              className="block text-[11px] font-black uppercase tracking-widest text-zinc-500 hover:text-black transition-all"
             >
               {link.label}
             </a>
@@ -198,7 +198,7 @@ export default function Footer() {
 
         {/* Legal */}
         <div className="lg:col-span-2 space-y-4">
-          <p className="text-[8px] font-black uppercase tracking-[0.4em] text-zinc-500">LEGAL</p>
+          <p className="text-[8px] font-black uppercase tracking-[0.4em] text-zinc-400">LEGAL</p>
           {[
             { label: 'Terms & Conditions', href: '/legal/terms' },
             { label: 'Privacy Policy', href: '/legal/terms#privacy' },
@@ -208,7 +208,7 @@ export default function Footer() {
             <Link
               key={link.label}
               href={link.href}
-              className="block text-[11px] font-black uppercase tracking-widest text-zinc-400 hover:text-white transition-all"
+              className="block text-[11px] font-black uppercase tracking-widest text-zinc-500 hover:text-black transition-all"
             >
               {link.label}
             </Link>
@@ -217,9 +217,9 @@ export default function Footer() {
 
         {/* FAQ */}
         <div id="faq" className="lg:col-span-12 mt-8">
-          <div className="border-t border-zinc-900 pt-12">
-            <p className="text-[8px] font-black uppercase tracking-[0.5em] text-zinc-500 mb-2">GOT QUESTIONS?</p>
-            <h3 className="text-4xl font-black italic uppercase tracking-tighter mb-10">FAQ</h3>
+          <div className="border-t border-zinc-100 pt-12">
+            <p className="text-[8px] font-black uppercase tracking-[0.5em] text-zinc-400 mb-2">GOT QUESTIONS?</p>
+            <h3 className="text-4xl font-black italic uppercase tracking-tighter mb-10 text-black">FAQ</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16">
               <div>
                 {faqs.slice(0, 5).map((faq) => (
@@ -238,14 +238,14 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-zinc-900 px-6 md:px-16 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-[8px] font-black uppercase tracking-[0.3em] text-zinc-600">
-          © 2025 REALMN. ALL RIGHTS RESERVED.
+      <div className="border-t border-zinc-100 px-6 md:px-16 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p className="text-[8px] font-black uppercase tracking-[0.3em] text-zinc-400">
+          © 2026 REALMN. ALL RIGHTS RESERVED.
         </p>
-        <p className="text-[8px] font-black uppercase tracking-[0.3em] text-zinc-600">
+        <p className="text-[8px] font-black uppercase tracking-[0.3em] text-zinc-400">
           MADE WITH 🖤 IN INDIA
         </p>
-        <p className="text-[8px] font-black uppercase tracking-[0.3em] text-zinc-600">
+        <p className="text-[8px] font-black uppercase tracking-[0.3em] text-zinc-400">
           REALMN.IN
         </p>
       </div>
