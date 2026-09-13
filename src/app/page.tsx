@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { Product } from '@/types/product';
 import Footer from './component/footer';
 
+export const dynamic = 'force-dynamic';
+
 export default async function HomePage() {
   const { data: products } = await superbase
     .from('products')
